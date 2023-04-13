@@ -35,8 +35,8 @@ def popular_movies(n):
     Movies_ratings_1 = Movies_ratings_1.merge(Movies_ratings_count, on='Movie_Id')
     #Movies_ratings_1.sort_values('Movie Rating', ascending=False)
     #Movies_ratings_1.loc[(Movies_ratings_1['rating']>Movies_ratings_1['Movie Rating'].mean())
-    Movies_ratings_1 = Movies_ratings_1.loc[(Movies_ratings_1['Movie Rating']>3) & (Movies_ratings_1['Rating Count']>20)]
-    Movies_ratings_1 = Movies_ratings_1.sort_values('Movie Rating', ascending=False)
+    Movies_ratings_1 = Movies_ratings_1.loc[(Movies_ratings_1['Movie Rating']>4) & (Movies_ratings_1['Rating Count']>100)]
+    Movies_ratings_1 = Movies_ratings_1.sort_values('Rating Count', ascending=False)
 
     return Movies_ratings_1.head(int(n))[['Movie','Genres','Release Year','Movie Rating']]
 #n=10
